@@ -117,7 +117,7 @@ Welcomes authenticated users and displays their details.
 ## Other Implementations
 
 ### Internationalization
-The application supports Chinese and English languages. This is evident from the use of MessageSource, LocaleResolver, and the /lang endpoint to switch languages.
+The application supports Chinese and English languages. This can be performed using MessageSource, LocaleResolver, and the /lang endpoint to switch languages.
 
 ### User Roles
 The code provides a way to distinguish between regular users and managers.
