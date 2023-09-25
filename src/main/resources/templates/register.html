@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{title.register.user}"></title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+    <div th:replace="~{fragments :: navbar}"></div>
+
+    <div class="container">
+        <h2 th:text="#{title.register.user}"></h2>
+        <form th:action="@{/register}" method="post">
+            <div th:if="${generalError}" style="color: red;">
+                <span th:text="${generalError}"></span>
+            </div>            
+            <div>
+                <label th:text="#{label.username}"></label>
+                <input type="text" name="username" th:value="${username}" required/>
+                <span th:if="${usernameError}" th:text="${usernameError}" style="color: red;"></span>
+            </div>
+            <div>
+                <label th:text="#{label.password}"></label>
+                <input type="password" name="password" required/>
+            </div>
+            <div>
+                <label th:text="#{label.name}"></label>
+                <input type="text" name="name" required 
+                    th:data-oninvalid="${onInvalidAttrValue}"
+                    oninvalid="setCustomInvalidity(this)"
+                    oninput="this.setCustomValidity('')" />            
+            </div>
+            
+            <div class="btn-group">
+                <button type="submit" class="button" th:text="#{button.register}"></button>
+            </div>
+        </div>
+        <script>
+            function setCustomInvalidity(element) {
+                var message = element.getAttribute('data-oninvalid');
+                element.setCustomValidity(message);
+            }
+        </script>
+    </body>
+    </html>

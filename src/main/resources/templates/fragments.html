@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Navigation Fragment</title>
+</head>
+<body>
+    <div th:fragment="navbar">
+        <div class="navbar">
+            <a th:href="@{/lang(lang='en', referer=${currentURL})}">English</a> | <a th:href="@{/lang(lang='zh', referer=${currentURL})}">中文</a>
+        </div>
+    </div>
+</body>
+</html>

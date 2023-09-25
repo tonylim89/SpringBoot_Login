@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{title.restricted}"></title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+    <div th:replace="~{fragments :: navbar}"></div>
+
+    <div class="container">
+        <h2 th:text="#{message.restricted.access}"></h2>
+        <div class="btn-group">
+            <a class="button" href="/welcome" th:text="#{button.back.welcome}"></a>
+            <form th:action="@{/logout}" method="post" style="display: inline;">
+                <button type="submit" class="button" th:text="#{button.logout}"></button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

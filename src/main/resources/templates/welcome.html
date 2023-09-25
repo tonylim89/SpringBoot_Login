@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{title.welcome}"></title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+    <div th:replace="~{fragments :: navbar}"></div>
+
+    <div class="container">
+        <h2 th:text="#{title.welcome}"></h2>
+        <p>
+            <strong th:text="#{label.name}"></strong> <span th:text="${user.name}"></span><br>
+            <strong th:text="#{label.username}"></strong> <span th:text="${user.username}"></span><br>
+            <strong th:text="#{label.role}"></strong> <span th:text="${user.role}"></span>
+        </p>
+        
+        <div class="btn-group">
+            <a th:if="${user.role == 'MANAGER'}" class="button" href="/restricted" th:text="#{button.access.restricted}"></a>
+            <form th:action="@{/logout}" method="post" style="display: inline;">
+                <button type="submit" class="button" th:text="#{button.logout}"></button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
