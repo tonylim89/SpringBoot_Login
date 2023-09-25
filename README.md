@@ -52,7 +52,7 @@ This controller handles the homepage redirection, restricted page, and locale ch
 - **setLocale()**: Handles the change of language based on the user's preference.
 
 ### SecurityConfiguration
-Sets up the security configuration for the application.
+Sets up the security configuration for the application using Spring Security.
 
 #### Key Components:
 - **passwordEncoder()**: Provides an instance of BCryptPasswordEncoder for password hashing.
